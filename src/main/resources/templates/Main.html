@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/styles/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="navborder">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Our Wedding</a></li>
+                        <li><a href="#">Details</a></li>
+                        <li><a href="#">How We Met</a></li>
+                        <li><a href="#">The Proposal</a></li>
+                        <li><a href="#">Gallary</a></li>
+                        <li><a href="#">Our Registry</a></li>
+                        <li><a href="#">Guest Book</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+        <div class="image-heading">
+            <img class="img-responsive" th:src="@{/images/placeholder_700_n.jpg}" />
+        </div>
+    </header>
+    <section class="container col-md-12">
+        <article class="our_wedding col-md-12">
+            <h3>Please join us for our wedding celebration on</h3>
+            <h5 class="wedding_date">April 27th, 2019</h5>
+        </article>
+        <article class="met col-md-12">
+            <div class="col-md-6 col-md-offset-3 vertical-center">
+                <h3>OUR STORY</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
+                    Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
+                    In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
+                    In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non nulla pulvinar, lacinia sem vitae, malesuada nisi.
+                    Suspendisse congue ipsum vel accumsan placerat. Nulla vel hendrerit nisl. Fusce quis sollicitudin libero.
+                    Morbi rhoncus dapibus sapien.</p>
+            </div>
+
+        </article>
+        <article class="proposal col-md-12">
+
+        </article>
+        <article class="gallery col-md-12">
+
+        </article>
+        <article class="guest_book col-md-12">
+
+        </article>
+    </section>
+
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
