@@ -30,6 +30,9 @@ ul.nav {
     display:inline;
     margin: auto;
 }
+.nav li:hover {
+    cursor: pointer;
+}
 .nav a{
     display:inline-block;
     padding:10px;
@@ -61,17 +64,93 @@ article.met {
     padding: 100px;
 }
 
+article.met p {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    text-transform: none;
+    letter-spacing: 0em;
+    font-size: 15.400000000000002px;
+    color: rgb(0, 0, 0);
+}
+
 
 /* proposal section */
 article.proposal {
-    height: 700px;
+    padding: 100px;
+}
+
+article.proposal p {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    text-transform: none;
+    letter-spacing: 0em;
+    font-size: 15.400000000000002px;
+    color: rgb(0, 0, 0);
 }
 
 article.gallery {
     background-color: #f5f5f5;
+    padding: 100px 0px !important;
+}
+
+article.gallery div {
+    padding: 5px !important;
+}
+
+article.gallery img {
+    padding: 0px !important;
+}
+
+article.registry {
     height: 700px;
 }
 
 article.guest_book {
-    height: 700px;
+    background-color: #f5f5f5;
 }
+
+article.guest_book div.form {
+    padding: 85px 0px;
+}
+
+.button-up {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#7d7d7d;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    display: none;
+}
+.button-up:hover {
+    color: #f7f7f7;
+    text-decoration: none;
+    cursor: pointer;
+}
+.button-up i {
+    font-size: 30px;
+    padding: 12px;
+}
+
+footer {
+    height: 350px;
+}
+
+/*light box plugin styles*/
+.ekko-lightbox-container {
+    height: auto !important;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 1200px !important;
+        margin: 30px auto;
+    }
+}
+
