@@ -6,7 +6,7 @@
     <groupId>com.atkison</groupId>
     <artifactId>atkison2018</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>atkison2018</name>
     <description>Marriage website</description>
@@ -79,6 +79,7 @@
     </dependencies>
 
     <build>
+        <finalName>ROOT</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

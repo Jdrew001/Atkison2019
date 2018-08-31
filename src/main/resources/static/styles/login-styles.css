@@ -1,0 +1,20 @@
+div.image-heading img {
+    width: 100%
+}
+
+.outer-div {
+    height: 50vh;
+    overflow:hidden;
+}
+
+.inner-div {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../images/placeholder_big_n.jpg');
+}
+
+div.form {
+    padding-top: 25px;
+}

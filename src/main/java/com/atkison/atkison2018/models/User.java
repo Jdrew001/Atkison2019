@@ -16,4 +16,12 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    public User() {}
+
+    public User(User user) {
+        this.id = user.id;
+        this.email = user.email;
+        this.password = user.password;
+    }
 }

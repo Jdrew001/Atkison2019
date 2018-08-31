@@ -2,11 +2,18 @@ package com.atkison.atkison2018;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class Atkison2018Application {
+public class Atkison2018Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(Atkison2018Application.class, args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(Atkison2018Application.class);
     }
 }

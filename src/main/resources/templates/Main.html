@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -36,7 +37,10 @@
         </nav>
 
         <div data-aos="fade-up" data-aos-duration="1500" class="image-heading">
-            <img class="img-responsive" th:src="@{/images/placeholder_700_n.jpg}" />
+            <img class="img-responsive hidden-sm hidden-xs" th:src="@{/images/placeholder_700_n.jpg}" />
+            <div class="hidden-md hidden-lg outer-div">
+                <div class="inner-div"></div>
+            </div>
         </div>
     </header>
     <section class="container col-md-12">
@@ -95,7 +99,7 @@
             <h3 class="text-center">Our Photos</h3>
             <br>
             <div class="col-md-6 col-md-offset-3 vertical-center">
-                <div class="col-md-12 row">
+                <div class="col-md-12">
                     <div data-aos="fade-up" data-aos-duration="1500" class="col-md-6">
                         <a th:href="@{/images/placeholder_big.jpg}" data-toggle="lightbox" data-gallery="example-gallery">
                             <img class="img-fluid img-thumbnail col-md-12" th:src="@{/images/placeholder_big.jpg}"/>
@@ -107,7 +111,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-12 row">
+                <div class="col-md-12">
                     <div data-aos="fade-up" data-aos-duration="1500" class="col-md-6">
                         <a th:href="@{/images/placeholder_big.jpg}" data-toggle="lightbox" data-gallery="example-gallery">
                             <img class="img-fluid img-thumbnail col-md-12" th:src="@{/images/placeholder_big.jpg}"/>
@@ -119,7 +123,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-12 row">
+                <div class="col-md-12">
                     <div data-aos="fade-up" data-aos-duration="1500" class="col-md-6">
                         <a th:href="@{/images/placeholder_big.jpg}" data-toggle="lightbox" data-gallery="example-gallery">
                             <img class="img-fluid img-thumbnail col-md-12" th:src="@{/images/placeholder_big.jpg}"/>
@@ -131,7 +135,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-12 row">
+                <div class="col-md-12">
                     <div data-aos="fade-up" data-aos-duration="1500" class="col-md-6">
                         <a th:href="@{/images/placeholder_big.jpg}" data-toggle="lightbox" data-gallery="example-gallery">
                             <img class="img-fluid img-thumbnail col-md-12" th:src="@{/images/placeholder_big.jpg}"/>
@@ -149,7 +153,7 @@
 
         </article>
         <article class="guest_book col-md-12">
-            <div >
+            <div class="guest-container">
                 <h3 class="text-center">RSPV Below</h3>
                 <br>
                 <p class="text-center">We would love to have you at our wedding. To ensure we have enough seats, do be sure to rsvp.</p>
@@ -157,17 +161,27 @@
                     <form class="form-horizontal">
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="email" class="form-control" id="inputEmail1" placeholder="First Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="email" class="form-control" id="inputEmail2" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
-                                <button type="submit" class="btn btn-default btn-block">Sign in</button>
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="# in party going to ceremony">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-6 col-md-offset-3">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="# in party going to reception">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-6 col-md-offset-3">
+                                <button type="submit" class="btn btn-default btn-block">RSVP</button>
                             </div>
                         </div>
                     </form>

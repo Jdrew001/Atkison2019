@@ -46,6 +46,19 @@ div.image-heading img {
     width: 100%
 }
 
+.outer-div {
+    height: 50vh;
+    overflow:hidden;
+}
+
+.inner-div {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../images/placeholder_big_n.jpg');
+}
+
 section.container {
     margin: 0px;
     padding: 0px;
@@ -111,6 +124,10 @@ article.guest_book {
     background-color: #f5f5f5;
 }
 
+article.guest_book div.guest-container {
+    padding: 15px !important;
+}
+
 article.guest_book div.form {
     padding: 85px 0px;
 }
@@ -147,10 +164,36 @@ footer {
     height: auto !important;
 }
 
-@media (min-width: 768px) {
+/*Responsive css*/
+@media (max-width: 768px) {
     .modal-dialog {
         width: 1200px !important;
         margin: 30px auto;
     }
+
+    #navbar {
+        padding: 0px !important;
+        overflow: hidden;
+    }
+    #navbar ul.nav {
+        padding-top: 15px !important;
+    }
+
+    #navbar li {
+        padding: 5px !important;
+        font-size: 20px !important;
+    }
+
+    /*our story paragraphs*/
+    article.met {
+        padding: 10px !important;
+    }
+
+    article.proposal {
+        padding: 10px !important;
+    }
+
 }
+
+
 
