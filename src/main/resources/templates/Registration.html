@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Register</title>
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/styles/font-awesome-4.7.0/css/font-awesome.css}">
     <link th:href="@{/styles/login-styles.css}" rel="stylesheet">
@@ -13,14 +13,13 @@
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" th:src="@{/images/placeholder_700_n.jpg}" />
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" th:action="@{/login}" method="post">
+        <form class="form-signin" th:action="@{/registration}" th:object="${user}" method="post">
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="password" class="form-control" placeholder="Password" required>
-            <div align="center" th:if="${param.error}">
-                <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+            <input type="email" id="inputEmail" th:field="*{email}" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="inputPassword" th:field="*{password}" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
         </form><!-- /form -->
     </div><!-- /card-container -->
 </div><!-- /container -->
+</body>
+</html>
