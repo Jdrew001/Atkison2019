@@ -1,5 +1,13 @@
 /*site styles*/
-
+#alert {
+    position: fixed;
+    width: 75%;
+    left: 50%;
+    margin-left: -37.5%;
+    top: 0%;
+    text-align: center;
+    margin-top: 5px;
+}
 /*menu styles*/
 .navbar {
     background: none !important;

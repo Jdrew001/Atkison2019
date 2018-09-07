@@ -25,11 +25,59 @@ public class Reserved {
 
     @Column(name = "partyNumberCeremony")
     @NotNull
-    @NotEmpty(message = "Please provide the number in your party attending the ceremony")
-    private int partyNumberCeremony;
+    private String partyNumberCeremony;
 
     @Column(name = "partyNumberReception")
     @NotNull
-    @NotEmpty(message = "Please provide the number in your party attending the reception")
-    private int partyNumberReception;
+    private String partyNumberReception;
+
+    public Reserved() { }
+
+    public Reserved(Reserved reserved)
+    {
+        this.firstname = reserved.firstname;
+        this.lastname = reserved.lastname;
+        this.partyNumberCeremony = reserved.partyNumberCeremony;
+        this.partyNumberReception = reserved.partyNumberReception;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getPartyNumberCeremony() {
+        return partyNumberCeremony;
+    }
+
+    public void setPartyNumberCeremony(String partyNumberCeremony) {
+        this.partyNumberCeremony = partyNumberCeremony;
+    }
+
+    public String getPartyNumberReception() {
+        return partyNumberReception;
+    }
+
+    public void setPartyNumberReception(String partyNumberReception) {
+        this.partyNumberReception = partyNumberReception;
+    }
 }

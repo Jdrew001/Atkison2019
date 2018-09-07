@@ -36,7 +36,7 @@
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
         </nav>
-
+        <div th:id="alert" th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}" style="display:none"/>
         <div data-aos="fade-up" data-aos-duration="1500" class="image-heading">
             <img class="img-responsive hidden-sm hidden-xs" th:src="@{/images/placeholder_700_n.jpg}" />
             <div class="hidden-md hidden-lg outer-div">
@@ -159,25 +159,25 @@
                 <br>
                 <p class="text-center">We would love to have you at our wedding. To ensure we have enough seats, do be sure to rsvp.</p>
                 <div class="col-md-6 col-md-offset-3 vertical-center form">
-                    <form class="form-horizontal">
+                    <form th:type="reset" class="form-horizontal" method="post" th:action="@{/}" th:object="${reserved}" onsubmit="clearForm()">
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
-                                <input type="email" class="form-control" id="inputEmail1" placeholder="First Name">
+                                <input type="text" class="form-control" id="firstname" placeholder="First Name" th:field="*{firstname}">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
-                                <input type="email" class="form-control" id="inputEmail2" placeholder="Last Name">
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" th:field="*{lastname}">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="# in party going to ceremony">
+                                <input type="number" class="form-control" id="ceremony" placeholder="# in party going to ceremony" th:field="*{partyNumberCeremony}">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="# in party going to reception">
+                                <input type="number" class="form-control" id="reception" placeholder="# in party going to reception" th:field="*{partyNumberReception}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -206,6 +206,20 @@
     <script th:src="@{/javascript/smoothscroll.min.js}"></script>
     <script>
         AOS.init();
+
+        $(document).ready(function() {
+           console.log($('#alert').length);
+           if($('#alert').length == 1) {
+               $('#alert').fadeIn(800).delay(1500).fadeOut(800, function() {
+                  $('#alert').remove();
+               });
+           }
+        });
+
+        function clearForm()
+        {
+            $(this).closest('form').find("input[type=text], input[type=number], textarea").val("");
+        }
 
         //light box configuration
         $(document).on('click', '[data-toggle="lightbox"]', function(event) {
