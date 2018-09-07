@@ -17,6 +17,9 @@
             <span id="reauth-email" class="reauth-email"></span>
             <input type="email" id="inputEmail" th:field="*{email}" class="form-control" placeholder="Email address" required autofocus>
             <input type="password" id="inputPassword" th:field="*{password}" class="form-control" placeholder="Password" required>
+            <div align="center" th:if="${param.error}">
+                <p style="">Email or Password invalid, please verify</p>
+            </div>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
         </form><!-- /form -->
     </div><!-- /card-container -->

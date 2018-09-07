@@ -12,13 +12,14 @@
 <div class="container">
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" th:src="@{/images/placeholder_700_n.jpg}" />
+        <div class="danger" th:if="${param.logout}">You have been logged out.</div>
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" th:action="@{/login}" method="post">
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="password" class="form-control" placeholder="Password" required>
-            <div align="center" th:if="${param.error}">
-                <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+            <input name="username" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <div align="center">
+                <p th:text="${error}" style="color: #FF1C19;"></p>
             </div>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
         </form><!-- /form -->

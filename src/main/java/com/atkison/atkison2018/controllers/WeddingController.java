@@ -1,5 +1,6 @@
 package com.atkison.atkison2018.controllers;
 
+import org.omg.CORBA.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,15 @@ public class WeddingController {
     {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("Main");
+
+        return mv;
+    }
+
+    @RequestMapping(value = {"/dashboard"}, method = RequestMethod.GET)
+    public ModelAndView DashboardView(Model model)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("Dashboard");
 
         return mv;
     }
