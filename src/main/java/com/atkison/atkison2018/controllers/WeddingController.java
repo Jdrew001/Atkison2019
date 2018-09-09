@@ -41,7 +41,8 @@ public class WeddingController {
     {
         if(bindingResult.hasErrors())
         {
-
+            redirectAttributes.addFlashAttribute("message", "You have successfully Reserved your spot!");
+            redirectAttributes.addFlashAttribute("alertClass", "danger");
         }
         this.reserveService.addNewReservation(reserved);
         redirectAttributes.addFlashAttribute("message", "You have successfully Reserved your spot!");
