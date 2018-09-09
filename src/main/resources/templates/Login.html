@@ -12,7 +12,7 @@
 <div class="container">
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" th:src="@{/images/placeholder_700_n.jpg}" />
-        <div class="danger" th:if="${param.logout}">You have been logged out.</div>
+        <div style="padding: 5px;" class="alert-danger text-center" th:if="${param.logout}">You have been logged out.</div>
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" th:action="@{/login}" method="post">
             <span id="reauth-email" class="reauth-email"></span>

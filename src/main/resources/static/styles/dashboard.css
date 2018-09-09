@@ -1,0 +1,8 @@
+div.panel, .panel-default {
+    margin: 20px 0px;
+    padding: 0px !important;
+}
+
+div.panel-body {
+    font-size: 45px;
+}

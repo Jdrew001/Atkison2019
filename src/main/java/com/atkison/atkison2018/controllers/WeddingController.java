@@ -54,8 +54,35 @@ public class WeddingController {
     public ModelAndView DashboardView(Model model)
     {
         ModelAndView mv = new ModelAndView();
+        model.addAttribute("reservations", reserveService.getAllReservations());
         mv.setViewName("Dashboard");
 
         return mv;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
