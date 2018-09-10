@@ -31,39 +31,32 @@
             </div><!--/.container-fluid -->
         </nav>
     </header>
+    <div th:id="alert" th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}" style="display:none"/>
     <section>
         <!-- RSVP TABLE -->
         <article>
-            <div class="panel panel-default col-md-3">
+            <div class="panel panel-default col-md-4">
                 <div class="panel-heading">
                     <h3 class="panel-title">Number of guests going to ceremony</h3>
                 </div>
                 <div class="panel-body text-center">
-                    <span class="counter">120</span>
+                    <span class="counter" th:text="${guestCeremony}"></span>
                 </div>
             </div>
-            <div class="panel panel-default col-md-3">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Number of parties going to ceremony</h3>
-                </div>
-                <div class="panel-body text-center">
-                    <span class="counter">85</span>
-                </div>
-            </div>
-            <div class="panel panel-default col-md-3">
+            <div class="panel panel-default col-md-4">
                 <div class="panel-heading">
                     <h3 class="panel-title">Number of guests going to reception</h3>
                 </div>
                 <div class="panel-body text-center">
-                    <span class="counter">200</span>
+                    <span class="counter" th:text="${guestReception}"></span>
                 </div>
             </div>
-            <div class="panel panel-default col-md-3">
+            <div class="panel panel-default col-md-4">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Number of parties going to reception</h3>
+                    <h3 class="panel-title">Number of parties</h3>
                 </div>
                 <div class="panel-body text-center">
-                    <span class="counter">100</span>
+                    <span class="counter" th:text="${numOfParties}"></span>
                 </div>
             </div>
         </article>
@@ -74,19 +67,35 @@
                     <th>Last Name</th>
                     <th># in party going to ceremony</th>
                     <th># in party going to reception</th>
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Delete</th>
                 </tr>
                 <tr th:each="rsvp : ${reservations}">
                     <td th:text="${rsvp.firstname}"></td>
                     <td th:text="${rsvp.lastname}"></td>
                     <td th:text="${rsvp.partyNumberCeremony}"></td>
                     <td th:text="${rsvp.partyNumberReception}"></td>
+                    <td class="text-center"><button th:id="${rsvp.id}" type="button" class="btn btn-success btn-xs">Edit</button></td>
+                    <td class="text-center"><button th:id="${rsvp.id}" type="button" class="btn btn-danger btn-xs delete-btn">Delete</button></td>
                 </tr>
             </table>
         </article>
     </section>
+    <form th:type="reset" id="delete-data" class="hidden" method="post" th:action="@{/dashboard/delete/}" th:object="${reserved}">
+        <input id="delete-input" th:field="*{id}" type="text">
+    </form>
+
+    <div class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
 
     <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script th:src="@{/javascript/countup.min.js}"></script>
     <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -94,6 +103,25 @@
         $('.counter').counterUp({
            delay: 10,
            time: 1000
+        });
+
+        //alert
+        $(document).ready(function () {
+            if($('#alert').length == 1) {
+                $('#alert').fadeIn(800).delay(2500).fadeOut(800, function() {
+                    $('#alert').remove();
+                });
+            }
+
+
+            $(".delete-btn").click(function () {
+                $("#delete-input").val(this.id);
+                swal("Warning", "Are you sure you want to delete?", "warning", {buttons: {true: "Yes", false: "No"}}).then((value) => {
+                    if(value === "true") {
+                        $("#delete-data").submit();
+                    }
+                });
+            });
         });
     </script>
 </body>

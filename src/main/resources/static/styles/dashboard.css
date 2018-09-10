@@ -6,3 +6,22 @@ div.panel, .panel-default {
 div.panel-body {
     font-size: 45px;
 }
+
+.swal-button--false {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.swal-button--true {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+#alert {
+    position: fixed;
+    width: 75%;
+    left: 50%;
+    margin-left: -37.5%;
+    top: 0%;
+    text-align: center;
+    margin-top: 5px;
+}

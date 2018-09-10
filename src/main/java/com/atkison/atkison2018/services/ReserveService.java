@@ -56,12 +56,12 @@ public class ReserveService {
         }
     }
 
-    public List<Reserved> deleteReservation(Reserved reserved)
+    public List<Reserved> deleteReservation(Integer id)
     {
         try {
-            Optional<Reserved> rsvp = this.reserveRepository.findById(reserved.getId());
+            Optional<Reserved> rsvp = this.reserveRepository.findById(id);
             rsvp.orElseThrow(() -> new RuntimeException("RSVP NOT FOUND IN DELETE"));
-            this.reserveRepository.delete(rsvp.get());
+            this.reserveRepository.deleteById(id);
 
             return this.reserveRepository.findAll();
 
