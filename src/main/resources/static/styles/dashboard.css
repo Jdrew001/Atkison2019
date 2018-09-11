@@ -21,7 +21,10 @@ div.panel-body {
     width: 75%;
     left: 50%;
     margin-left: -37.5%;
-    top: 0%;
+    top: 25%;
     text-align: center;
     margin-top: 5px;
+}
+.btn.disabled:hover {
+    cursor: pointer;
 }
