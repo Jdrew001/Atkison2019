@@ -1,20 +1,16 @@
 package com.atkison.atkison2018.controllers;
 
 import com.atkison.atkison2018.models.Reserved;
-import com.atkison.atkison2018.repository.ReserveRepository;
+import com.atkison.atkison2018.services.EmailService;
 import com.atkison.atkison2018.services.ReserveService;
-import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -23,6 +19,9 @@ public class WeddingController {
 
     @Autowired
     private ReserveService reserveService;
+
+    @Autowired
+    private EmailService emailService;
 
     public WeddingController(ReserveService reserveService)
     {
@@ -48,6 +47,15 @@ public class WeddingController {
             redirectAttributes.addFlashAttribute("alertClass", "danger");
         }
         this.reserveService.addNewReservation(reserved);
+
+        try {
+            this.emailService.sendSimpleMessage("dtatkison@gmail.com", "A new reservation has come in", "Reservation: \n\n"
+                    + reserved.getFirstname() + " " + reserved.getLastname() + " \nNumber in party going to ceremony: " + reserved.getPartyNumberCeremony()
+                    + " \nNumber in party going to reception: " + reserved.getPartyNumberReception());
+        } catch(Exception ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
+
         redirectAttributes.addFlashAttribute("message", "You have successfully Reserved your spot!");
         redirectAttributes.addFlashAttribute("alertClass", "alert-success");
         return "redirect:/";
