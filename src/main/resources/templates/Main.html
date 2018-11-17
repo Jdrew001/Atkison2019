@@ -9,6 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" th:href="@{/styles/font-awesome-4.7.0/css/font-awesome.css}">
     <link th:href="@{/styles/styles.css}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -26,8 +31,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a id="ourwedding">Our Wedding</a></li>
-                        <li><a id="met">How We Met</a></li>
-                        <li><a id="proposal">The Proposal</a></li>
+                        <li><a id="met">Our Story</a></li>
                         <li><a id="gallery">Gallery</a></li>
                         <li><a id="registry">Our Registry</a></li>
                         <li><a id="book">Guest Book</a></li>
@@ -38,9 +42,10 @@
         </nav>
         <div th:id="alert" th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}" style="display:none"/>
         <div data-aos="fade-up" data-aos-duration="1500" class="image-heading">
-            <img class="img-responsive hidden-sm hidden-xs" th:src="@{/images/placeholder_700_n.jpg}" />
-            <div class="hidden-md hidden-lg outer-div">
-                <div class="inner-div"></div>
+            <div class="outer-div">
+                <div class="inner-div" th:style="'background:url(' + @{/images/paris.jpg} + ');'">
+                    <h2>Elizabeth & Drew</h2>
+                </div>
             </div>
         </div>
     </header>
@@ -53,48 +58,34 @@
             <div class="col-md-6 col-md-offset-3 vertical-center">
                 <h3 class="text-center">OUR STORY</h3>
                 <br>
-                <h5>Her Story</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
-                    Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
-                    In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
-                    In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non nulla pulvinar, lacinia sem vitae, malesuada nisi.
-                    Suspendisse congue ipsum vel accumsan placerat. Nulla vel hendrerit nisl. Fusce quis sollicitudin libero.
-                    Morbi rhoncus dapibus sapien.</p>
-                <br>
-                <h5>His Story</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
-                    Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
-                    In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
-                    In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non nulla pulvinar, lacinia sem vitae, malesuada nisi.
-                    Suspendisse congue ipsum vel accumsan placerat. Nulla vel hendrerit nisl. Fusce quis sollicitudin libero.
-                    Morbi rhoncus dapibus sapien.</p>
+                <div data-aos="fade-up" data-aos-duration="1500" class="text-center story-content">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <h4>How We Met</h4>
+                    <p class="story-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
+                        Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
+                        In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
+                        In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1500" class="text-center story-content">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <h4>Our first date</h4>
+                    <p class="story-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
+                        Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
+                        In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
+                        In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
+                </div>
+
+                <div data-aos="fade-up" data-aos-duration="1500" class="text-center story-content">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <h4>Our proposal</h4>
+                    <p class="story-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
+                        Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
+                        In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
+                        In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
+                </div>
+
             </div>
 
-        </article>
-        <article class="proposal col-md-12">
-            <div class="col-md-6 col-md-offset-3 vertical-center">
-                <h3 class="text-center">The Proposal</h3>
-                <br>
-                <h5>Her Story</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
-                    Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
-                    In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
-                    In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non nulla pulvinar, lacinia sem vitae, malesuada nisi.
-                    Suspendisse congue ipsum vel accumsan placerat. Nulla vel hendrerit nisl. Fusce quis sollicitudin libero.
-                    Morbi rhoncus dapibus sapien.</p>
-                <br>
-                <h5>His Story</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.
-                    Maecenas dignissim mauris eu lorem blandit porttitor. Quisque in massa sapien. Nam in ultrices ante. Aliquam eget pharetra eros.
-                    In pulvinar augue id mi tempor porttitor. Cras facilisis arcu nec justo interdum malesuada. Donec scelerisque, nisi congue lobortis hendrerit, erat orci accumsan ligula, non maximus ipsum ex ac diam.
-                    In scelerisque suscipit ipsum, ut vestibulum elit lobortis a.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non nulla pulvinar, lacinia sem vitae, malesuada nisi.
-                    Suspendisse congue ipsum vel accumsan placerat. Nulla vel hendrerit nisl. Fusce quis sollicitudin libero.
-                    Morbi rhoncus dapibus sapien.</p>
-            </div>
         </article>
         <article class="gallery col-md-12">
             <h3 class="text-center">Our Photos</h3>
@@ -151,14 +142,30 @@
             </div>
         </article>
         <article class="registry col-md-12">
+            <div class="text-center">
+                <h3>Our Registry</h3>
+                <div data-aos="fade-up" data-aos-duration="1500" class="col-md-6 col-md-offset-3">
+                    <div class="col-md-6 col-md-offset-3">
+                        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec est et lectus porta porttitor at ac quam. Pellentesque at pellentesque ante.</p>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1500" class="col-md-6 col-md-offset-3 registry-div">
+                    <div class="col-md-6">
+                        <img class="img-responsive" th:src="@{/images/amazon.png}" />
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-responsive" th:src="@{/images/target.png}" />
+                    </div>
+                </div>
 
+            </div>
         </article>
         <article class="guest_book col-md-12">
             <div class="guest-container">
                 <h3 class="text-center">RSPV Below</h3>
                 <br>
                 <p class="text-center">We would love to have you at our wedding. To ensure we have enough seats, do be sure to rsvp.</p>
-                <div class="col-md-6 col-md-offset-3 vertical-center form">
+                <div data-aos="fade-up" data-aos-duration="1500" class="col-md-6 col-md-offset-3 vertical-center form">
                     <form th:type="reset" class="form-horizontal" method="post" th:action="@{/}" th:object="${reserved}" onsubmit="clearForm()">
                         <div class="form-group">
                             <div class="col-sm-6 col-md-offset-3">
@@ -189,8 +196,17 @@
                 </div>
             </div>
         </article>
+        <article class="just-married-article col-md-12" style="padding: 0px">
+            <div class="just-married-background" th:style="'background:url(' + @{/images/flowers.jpg} + ');'">
+                <div class="container">
+                    <div class="col-sm-12 text-center">
+                        <h2>Just Married</h2>
+                    </div>
+                </div>
+            </div>
+        </article>
         <footer class="col-md-12">
-            footer
+            <p class="text-center">© 2018 all right reserved - a product of dtatkison.</p>
         </footer>
     </section>
     <div>
@@ -204,10 +220,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
     <script th:src="@{/javascript/smoothscroll.min.js}"></script>
+    <script th:src="@{/javascript/jquery.paroller.min.js}"></script>
+    <script th:src="@{/javascript/countdown.min.js}"></script>
     <script>
         AOS.init();
 
         $(document).ready(function() {
+            $('.paris-img').paroller();
+
+
+
+
            console.log($('#alert').length);
            //Display the success message then remove it when user successfully submitted the form
            if($('#alert').length == 1) {

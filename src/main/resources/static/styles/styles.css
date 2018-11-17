@@ -32,6 +32,8 @@ ul.nav {
     padding:0;
     display: inline-block;
     float: none !important;
+    font-family: 'Muli', sans-serif;
+    text-transform: uppercase;
 }
 
 .nav li{
@@ -46,12 +48,17 @@ ul.nav {
     padding:10px;
 }
 
-div.image-heading {
-
+div.image-heading h2 {
+    font-family: 'Great Vibes', cursive;
+    color: white;
+    text-align: center;
+    font-size: 100px;
 }
 
 div.image-heading img {
-    width: 100%
+    width: 100%;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 
 .outer-div {
@@ -60,11 +67,23 @@ div.image-heading img {
 }
 
 .inner-div {
+    background-position: 50% 55% !important;
+    background-size: cover !important;
     height: 100%;
     width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: url('../images/placeholder_big_n.jpg');
+    z-index: 0;
+    padding: 75px 0px;
+    margin: 0px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+}
+h4 {
+    font-family: 'Gentium Basic', serif;
+    font-size: 23px;
 }
 
 section.container {
@@ -76,23 +95,27 @@ section.container {
 article.our_wedding {
     text-align: center;
     padding: 100px 0px;
-    background-color: white;
+    background-color: #f5f5f5;
 }
 
 /* how we met section */
 article.met {
-    background-color: #f5f5f5;
+    background-color: white;
     padding: 100px;
 }
 
-article.met p {
+p {
     font-weight: 400;
     font-style: normal;
     line-height: 1.6;
     text-transform: none;
     letter-spacing: 0em;
     font-size: 15.400000000000002px;
-    color: rgb(0, 0, 0);
+    color: #8e8e8e;
+}
+
+div.story-content {
+    margin: 85px 0px;
 }
 
 
@@ -124,8 +147,21 @@ article.gallery img {
     padding: 0px !important;
 }
 
-article.registry {
-    height: 700px;
+article.registry div.registry-div {
+    padding: 75px 0px;
+}
+
+article.registry img {
+    opacity: .4;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+}
+article.registry img:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 article.guest_book {
@@ -138,6 +174,39 @@ article.guest_book div.guest-container {
 
 article.guest_book div.form {
     padding: 85px 0px;
+}
+
+article.guest_book input {
+    background: #fcfcfc;
+    border: 1px solid #ececec;
+    margin: 0 0 12px;
+    outline: 0 none;
+    overflow: hidden;
+    padding: 0 15px;
+    resize: none;
+    width: 100%;
+    height: 42px;
+}
+
+article.guest_book button {
+    background: #fcfcfc;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    color: black !important;
+    border: none;
+    height: 42px;
+    line-height: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+article.guest_book button:hover {
+    cursor: pointer;
+    opacity: .6;
 }
 
 .button-up {
@@ -163,8 +232,33 @@ article.guest_book div.form {
     padding: 12px;
 }
 
+div.just-married-background {
+    background-position: 20% 55% !important;
+    background-size: cover !important;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    padding: 75px 0px;
+    margin: 0px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+div.just-married-background h2 {
+    font-family: 'Kristi', cursive;
+    color: #ffffff;
+    line-height: 1;
+    font-size: 130px;
+
+}
+
 footer {
-    height: 350px;
+    padding: 15px;
+
+}
+
+footer p {
+    margin: 0px;
 }
 
 /*light box plugin styles*/
@@ -174,6 +268,18 @@ footer {
 
 /*Responsive css*/
 @media (max-width: 768px) {
+    div.image-heading h2 {
+        font-size: 50px
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
     .modal-dialog {
         width: 1200px !important;
         margin: 30px auto;

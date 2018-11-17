@@ -49,7 +49,7 @@ public class WeddingController {
         this.reserveService.addNewReservation(reserved);
 
         try {
-            this.emailService.sendSimpleMessage("dtatkison@gmail.com", "A new reservation has come in", "Reservation: \n\n"
+            this.emailService.sendSimpleMessage("dtatkison@gmail.com", "ATKISON2019-WeddingRSVP", "Reservation: \n\n"
                     + reserved.getFirstname() + " " + reserved.getLastname() + " \nNumber in party going to ceremony: " + reserved.getPartyNumberCeremony()
                     + " \nNumber in party going to reception: " + reserved.getPartyNumberReception());
         } catch(Exception ex) {

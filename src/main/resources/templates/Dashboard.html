@@ -26,7 +26,6 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="">Home</a></li>
                         <li><a th:href="@{/logout}">Logout</a></li>
-                        <li><a id="export" href="">Export to Excel</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container-fluid -->
@@ -100,22 +99,12 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script th:src="@{/javascript/countup.min.js}"></script>
     <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script th:src="@{/javascript/jquery.table2excel.js}"></script>
     <script th:src="@{/javascript/bootstrap-table.js}"></script>
 
     <script>
         $('.counter').counterUp({
            delay: 10,
            time: 1000
-        });
-
-        //download table to excel spreadsheet
-        $('#export').click(function () {
-            $('#table').table2excel({
-                exclude: ".noExl",
-                name: "RSVP Worksheet",
-                filename: "RSVP"
-            })
         });
 
         //alert
