@@ -5,7 +5,7 @@
 
     <groupId>com.atkison</groupId>
     <artifactId>ROOT</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>war</packaging>
 
     <name>atkison2018</name>
@@ -107,15 +107,6 @@
             <version>1.9.1</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 
 </project>
