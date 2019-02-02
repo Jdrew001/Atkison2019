@@ -5,9 +5,10 @@
 
     <groupId>com.atkison</groupId>
     <artifactId>ROOT</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>ROOT</name>
+    <name>atkison2018</name>
     <description>Marriage website</description>
 
     <parent>
@@ -106,6 +107,16 @@
             <version>1.9.1</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>ROOT</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
