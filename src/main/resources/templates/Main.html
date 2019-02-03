@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" class="animated fadeIn slow">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kristi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body>
     <header>
@@ -43,7 +44,7 @@
         <div th:id="alert" th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}" style="display:none"/>
         <div data-aos="fade-up" data-aos-duration="1500" class="image-heading">
             <div class="outer-div">
-                <div class="inner-div" th:style="'background:url(' + @{/images/headline_pic.jpg} + ');'">
+                <div class="inner-div animated fadeIn slow" th:style="'background:url(' + @{/images/headline_pic.jpg} + ');'">
                     <h2 class="name-headline">Elizabeth & Drew</h2>
                 </div>
             </div>
