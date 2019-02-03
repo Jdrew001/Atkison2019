@@ -39,7 +39,7 @@
                         <li sec:authorize="isAuthenticated()"><a th:href="@{/dashboard}">Dashboard</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
-            </div><!--/.container-fluid -->
+            </div><!--/.container-fluid - test -->
         </nav>
         <div th:id="alert" th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}" style="display:none"/>
         <div data-aos="fade-up" data-aos-duration="1500" class="image-heading">
