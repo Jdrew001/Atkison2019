@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Atkison2018Application<ROOT>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.atkison.atkison2018.Atkison2018Application",
+            "projectName": "ROOT",
+            "args": ""
+        }
+    ]
+}
