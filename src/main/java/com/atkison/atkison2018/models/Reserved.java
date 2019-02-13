@@ -31,6 +31,10 @@ public class Reserved {
     @NotNull
     private String partyNumberReception;
 
+    @OneToOne(mappedBy = "reserved", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, optional = false)
+    private Ipaddress ipaddress;
+
     public Reserved() { }
 
     public Reserved(Reserved reserved)
@@ -39,6 +43,7 @@ public class Reserved {
         this.lastname = reserved.lastname;
         this.partyNumberCeremony = reserved.partyNumberCeremony;
         this.partyNumberReception = reserved.partyNumberReception;
+        this.ipaddress = reserved.ipaddress;
     }
 
     public Integer getId() {
@@ -79,5 +84,13 @@ public class Reserved {
 
     public void setPartyNumberReception(String partyNumberReception) {
         this.partyNumberReception = partyNumberReception;
+    }
+
+    public Ipaddress getIpaddress() {
+        return ipaddress;
+    }
+
+    public void setIpaddress(Ipaddress ipaddress) {
+        this.ipaddress = ipaddress;
     }
 }

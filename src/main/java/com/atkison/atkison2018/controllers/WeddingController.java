@@ -2,6 +2,7 @@ package com.atkison.atkison2018.controllers;
 
 import com.atkison.atkison2018.models.Reserved;
 import com.atkison.atkison2018.services.EmailService;
+import com.atkison.atkison2018.services.IpAddressService;
 import com.atkison.atkison2018.services.ReserveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -19,6 +21,9 @@ public class WeddingController {
 
     @Autowired
     private ReserveService reserveService;
+
+    @Autowired
+    private IpAddressService ipAddressService;
 
     @Autowired
     private EmailService emailService;
@@ -39,14 +44,16 @@ public class WeddingController {
     }
 
     @PostMapping("/")
-    public String NewRSVP(@Valid @ModelAttribute("reserved") Reserved reserved, BindingResult bindingResult, RedirectAttributes redirectAttributes)
+    public String NewRSVP(@Valid @ModelAttribute("reserved") Reserved reserved, BindingResult bindingResult, RedirectAttributes redirectAttributes, HttpServletRequest request)
     {
         if(bindingResult.hasErrors())
         {
             redirectAttributes.addFlashAttribute("message", "Uh Oh, something went wrong!");
             redirectAttributes.addFlashAttribute("alertClass", "danger");
         }
-        this.reserveService.addNewReservation(reserved);
+        this.reserveService.addNewReservation(reserved, request.getRemoteAddr());
+        this.ipAddressService.saveIpAddress(request.getRemoteAddr(), reserved);
+
 
         try {
             this.emailService.sendSimpleMessage("dtatkison@gmail.com", "ATKISON2019-WeddingRSVP", "Reservation: \n\n"

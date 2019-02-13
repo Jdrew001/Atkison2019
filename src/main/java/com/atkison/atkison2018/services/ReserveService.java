@@ -1,6 +1,8 @@
 package com.atkison.atkison2018.services;
 
+import com.atkison.atkison2018.models.Ipaddress;
 import com.atkison.atkison2018.models.Reserved;
+import com.atkison.atkison2018.repository.IpRepository;
 import com.atkison.atkison2018.repository.ReserveRepository;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -35,7 +37,7 @@ public class ReserveService {
         return rsvp;
     }
 
-    public boolean addNewReservation(Reserved reserved)
+    public boolean addNewReservation(Reserved reserved, String ip)
     {
         try {
             Reserved rsvp = new Reserved(reserved);
